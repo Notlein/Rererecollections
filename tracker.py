@@ -12,7 +12,6 @@ while True:
     # Read a frame from the webcam
     ret, frame = cap.read()
 
-    # Convert the frame to grayscale
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
     # Adjust the threshold value based on your lighting conditions
@@ -32,7 +31,7 @@ while True:
         area = cv2.contourArea(contour)
 
         # Set a threshold for the contour area to filter small contours
-        if area > 100:
+        if area > 50:
             # Update the largest contour if the current contour is larger
             if area > largest_area:
                 largest_area = area
